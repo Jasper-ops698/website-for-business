@@ -171,7 +171,7 @@ textarea: focus {
 }
 
 button[type="submit"] {
-    width: 10%;
+    width: 5%;
     padding: 5px;
     font-size: 13px;
     font-weight: bold;
@@ -184,7 +184,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: yellow;
+    background-color: dark-yellow;
 }
 
 .form-feedback {
