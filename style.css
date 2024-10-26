@@ -184,7 +184,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: red;
+    background-color: yellow;
 }
 
 .form-feedback {
