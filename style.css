@@ -127,6 +127,7 @@ ul li a:hover {
     height: 50vh;
     letter-spacing: 1.2px;
     line-height: 30px;
+    flex: 1;
 }
 form h2 {
     font-size: 36px;
@@ -222,6 +223,8 @@ button[type="submit"]:hover {
   margin: auto;
   overflow: hidden;
   border-radius: 8px;
+    flex: 1;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1)
 }
 
 /* Slides */
