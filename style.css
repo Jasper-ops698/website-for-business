@@ -135,6 +135,11 @@ form h2 {
     text-align: center;
     margin-bottom: 20px;
 }
+form label {
+    font-weight: 24px bold;
+    display: block;
+    margin-bottom: 8px;
+}
 
 .close {
     color: #aaa;
