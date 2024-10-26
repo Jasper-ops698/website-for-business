@@ -159,6 +159,13 @@ textarea {
     background-color: beige;
 }
 
+input: focus,
+select: focus,
+textarea: focus {
+    border-color: #007bff;
+    outline: none;
+}
+
 
 .close {
     color: #aaa;
