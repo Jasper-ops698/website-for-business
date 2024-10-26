@@ -217,7 +217,7 @@ button[type="submit"]:hover {
 
 /* Slideshow Container */
 .slideshow-container {
-  position-top: right;
+  position-top: relative;
   max-width: 50%;
   margin: auto;
   overflow: hidden;
