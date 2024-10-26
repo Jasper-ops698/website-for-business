@@ -40,3 +40,27 @@ document.getElementById('orderForm').onsubmit = async (e) => {
         alert('There was an error placing your order. Please try again.');
     }
 }
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let slides = document.querySelectorAll('.slide');
+  slides.forEach((slide, index) => {
+    slide.style.display = 'none';
+  });
+  slideIndex++;
+  if (slideIndex > slides.length) { slideIndex = 1; }
+  slides[slideIndex - 1].style.display = 'block';
+  setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+
+function changeSlide(n) {
+  slideIndex += n;
+  let slides = document.querySelectorAll('.slide');
+  if (slideIndex > slides.length) { slideIndex = 1; }
+  if (slideIndex < 1) { slideIndex = slides.length; }
+  slides.forEach((slide, index) => {
+    slide.style.display = 'none';
+  });
+  slides[slideIndex - 1].style.display = 'block';
+}
