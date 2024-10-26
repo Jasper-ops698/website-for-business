@@ -138,7 +138,7 @@ form h2 {
 form label {
     font-weight: 24px bold;
     color: #333;
-    font-weight: bold;
+    font-weight: bolder;
     display: flex;
     margin-bottom: 8px;
 }
