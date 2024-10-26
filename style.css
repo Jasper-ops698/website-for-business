@@ -128,6 +128,11 @@ ul li a:hover {
     letter-spacing: 1.2px;
     line-height: 30px;
 }
+form h2 {
+    font-size: 24px;
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
 
 .close {
     color: #aaa;
