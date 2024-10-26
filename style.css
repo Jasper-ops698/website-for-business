@@ -170,6 +170,19 @@ textarea: focus {
     color: #999999;
 }
 
+button[type="submit"] {
+    width: 2%;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
 
 .close {
     color: #aaa;
