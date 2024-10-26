@@ -218,13 +218,11 @@ button[type="submit"]:hover {
 
 /* Slideshow Container */
 .slideshow-container {
-  position-top: relative;
+  position: relative;
   max-width: 50%;
   margin: auto;
   overflow: hidden;
   border-radius: 8px;
-    flex: 1;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1)
 }
 
 /* Slides */
