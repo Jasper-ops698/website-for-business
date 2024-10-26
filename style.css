@@ -221,7 +221,7 @@ button[type="submit"]:hover {
   position: absolute;
   max-width: 50%;
     top: 40%;
-    right: 40%;
+    right: 25%;
   margin: center;
   overflow: hidden;
   border-radius: 8px;
