@@ -164,7 +164,10 @@ select: focus,
 textarea: focus {
     border-color: #007bff;
     outline: none;
-    border-radius: 10px;
+}
+
+::placeholder {
+    color: #999999;
 }
 
 
