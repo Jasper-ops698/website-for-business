@@ -226,7 +226,7 @@ button[type="submit"]:hover {
 
 /* Slides */
 .slide {
-  display: none;
+  display: block;
   position: relative;
 }
 
