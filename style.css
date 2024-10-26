@@ -123,7 +123,9 @@ ul li a:hover {
     padding: 20px;
     border: 1px solid #333;
     width: 80%; /* Could be more or less, depending on screen size */
-    height: 20vh;
+    height: 40vh;
+    letter-spacing: 1.2px;
+    line-height: 30px;
 }
 
 .close {
@@ -137,7 +139,7 @@ ul li a:hover {
 .close:hover,
 .close:focus {
     color: black;
-    text-decoration: none;
+    text-decoration: 0.3 ease;
     cursor: pointer;
 }
 
