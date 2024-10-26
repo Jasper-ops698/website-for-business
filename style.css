@@ -122,6 +122,7 @@ ul li a:hover {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #333;
+    border-radius: 8px;
     width: 80%; /* Could be more or less, depending on screen size */
     height: 40vh;
     letter-spacing: 1.2px;
@@ -133,6 +134,7 @@ ul li a:hover {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
 
