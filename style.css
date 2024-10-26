@@ -123,8 +123,8 @@ ul li a:hover {
     padding: 20px;
     border: 1px solid #333;
     border-radius: 15px;
-    width: 80%; /* Could be more or less, depending on screen size */
-    height: 40vh;
+    width: 50%; /* Could be more or less, depending on screen size */
+    height: 50vh;
     letter-spacing: 1.2px;
     line-height: 30px;
 }
