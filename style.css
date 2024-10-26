@@ -131,6 +131,7 @@ ul li a:hover {
 form h2 {
     font-size: 36px;
     color: white;
+    font-style: italic;
     text-align: center;
     margin-bottom: 20px;
 }
