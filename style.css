@@ -118,7 +118,7 @@ ul li a:hover {
 }
 
 .modal-content {
-    background-color: #333;
+    background-color: #green;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #333;
