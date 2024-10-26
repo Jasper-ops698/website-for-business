@@ -118,7 +118,7 @@ ul li a:hover {
 }
 
 .modal-content {
-    background-color: #333;
+    background-color: transparent;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #333;
@@ -134,7 +134,6 @@ ul li a:hover {
     float: right;
     font-size: 28px;
     font-weight: bold;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
 
