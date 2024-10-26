@@ -220,8 +220,8 @@ button[type="submit"]:hover {
 .slideshow-container {
   position: absolute;
   max-width: 50%;
-    top: 50%;
-    right: 50%;
+    top: 40%;
+    right: 40%;
   margin: center;
   overflow: hidden;
   border-radius: 8px;
