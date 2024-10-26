@@ -215,6 +215,36 @@ button[type="submit"]:hover {
     cursor: pointer;
 }
 
+/* Slideshow Container */
+.slideshow-container {
+  position: right;
+  max-width: 50%;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* Slides */
+.slide {
+  display: none;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Animation */
+.fade {
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0.4 }
+  to { opacity: 1 }
+}
+
 .srch.focus {
     outline: none;
 }
