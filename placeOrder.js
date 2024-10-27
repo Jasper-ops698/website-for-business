@@ -3,6 +3,7 @@ export default async function handler(req, res) {
         const { customerName, phonenumber, product, quantity, address } = req.body;
 
         // Here you can add logic to process the order (e.g., save to database)
+        module.exports = placeOrder;
 
         console.log('Order received:', { customerName, phonenumber, product, quantity, address });
 
