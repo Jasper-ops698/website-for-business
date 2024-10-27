@@ -113,30 +113,139 @@ ul li a:hover {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(250, 7, 7); /* Fallback color */
+    background-color: rgba(250, 7, 7); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: #228b22;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #333;
-    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 15px;
+    width: 50%; /* Could be more or less, depending on screen size */
+    height: 50vh;
+    letter-spacing: 1.2px;
+    line-height: 30px;
+    flex: 1;
+}
+form h2 {
+    font-size: 36px;
+    color: #333;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 5px;
+}
+form label {
+    font-size: 24px;
+    color: #333;
+    font-weight: bolder;
+    display: flex;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 30%;
+    padding: 3px;
+    margin-bottom: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    font-color: #333;
+    background-color: beige;
+}
+
+input: focus,
+select: focus,
+textarea: focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+::placeholder {
+    color: #999999;
+}
+
+button[type="submit"] {
+    width: 15%;
+    padding: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    color: white;
+    background-color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: brown;
+}
+
+.form-feedback {
+    margin-top: 10px;
+    font-size: 13px;
+    color: green;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    form {
+        padding: 20px;
+    }
 }
 
 .close {
     color: #aaa;
     float: right;
-    font-size: 28px;
+    font-size: 18px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
-    text-decoration: none;
+    color: white;
+    text-decoration: 0.3 ease;
     cursor: pointer;
+}
+
+/* Slideshow Container */
+.slideshow-container {
+  position: absolute;
+  max-width: 50%;
+    top: 40%;
+    right: 25%;
+  margin: center;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* Slides */
+.slide {
+  display: block;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Animation */
+.fade {
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0.4 }
+  to { opacity: 1 }
 }
 
 .srch.focus {
@@ -301,5 +410,4 @@ ul li a:hover {
 .icons ion-icon:hover{
     color: red;
 }
-
 
