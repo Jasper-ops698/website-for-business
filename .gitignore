@@ -1,0 +1,17 @@
+# Node modules
+node_modules/
+
+#logs
+logs
+*.log
+npm-debug.log*
+# environment variable file
+.env
+dist/
+build/
+# Operating system files
+.Ds_Store
+Thumbs.db
+# Miscellaneous files
+coverage/
+*.tgz

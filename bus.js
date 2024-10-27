@@ -18,18 +18,10 @@ document.getElementById('orderForm').onsubmit = async (e) => {
 
     const orderData = {
         customerName: document.getElementById('customerName').value,
-        phoneNumber: document.getElementById('phonenumber').value,
+        email: document.getElementById('phonenumber').value,
         product: document.getElementById('product').value,
-        quantity: parseInt(document.getElementById('quantity').value),
+        quantity: document.getElementById('quantity').value,
         address: document.getElementById('address').value,
-        items: [
-            {
-                product: document.getElementById('product').value,
-                quantity: parseInt(document.getElementById('quantity').value),
-                price: 200KES
-            }
-        ],
-        total: 200KES * parsenInt(document.getElementById('quantity').value)
     };
 
     try {
@@ -49,27 +41,26 @@ document.getElementById('orderForm').onsubmit = async (e) => {
         alert('There was an error placing your order. Please try again.');
     }
 }
-let slideIndex = 0;
-showSlides();
+const express = require('express');
+const bodyParser = require('body-parser');
+const placeOrder = require('./PlaceOrder'); // Import the placeOrder function from PlaceOrder.js
 
-function showSlides() {
-  let slides = document.querySelectorAll('.slide');
-  slides.forEach((slide, index) => {
-    slide.style.display = 'none';
-  });
-  slideIndex++;
-  if (slideIndex > slides.length) { slideIndex = 1; }
-  slides[slideIndex - 1].style.display = 'block';
-  setTimeout(showSlides, 3000); // Change image every 3 seconds
-}
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-function changeSlide(n) {
-  slideIndex += n;
-  let slides = document.querySelectorAll('.slide');
-  if (slideIndex > slides.length) { slideIndex = 1; }
-  if (slideIndex < 1) { slideIndex = slides.length; }
-  slides.forEach((slide, index) => {
-    slide.style.display = 'none';
+app.use(bodyParser.json());
+
+// API endpoint to place order
+app.post('/api/place-order', async (req, res) => {
+  try {
+    const orderDetails = req.body;
+    await placeOrder(orderDetails);
+    res.status(200).json({ message: 'Order placed successfully!' });
+  } catch (error) {
+    console.error('Error in API:', error);
+    res.status(500).json({ message: 'Failed to place order' });
+  }
+});
+app.listen(PORT, () => {
+    console.log('Server is running on http://localhost:${PORT}');
   });
-  slides[slideIndex - 1].style.display = 'block';
-}
