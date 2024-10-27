@@ -23,12 +23,12 @@ document.getElementById('orderForm').onsubmit = async (e) => {
         address: document.getElementById('address').value,
         items: [
             {
-                product: document.getElementById('lunch').value,
-                quantity: parseInt(document.getElementById('1').value),
+                product: document.getElementById('product').value,
+                quantity: parseInt(document.getElementById('quantity').value),
                 price: 200KES
             }
         ],
-        total: 200KES * parsenInt(document.getElementById('1').value)
+        total: 200KES * parsenInt(document.getElementById('quantity').value)
     };
 
     try {
