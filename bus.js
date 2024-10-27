@@ -20,6 +20,7 @@ document.getElementById('orderForm').onsubmit = async (e) => {
         customerName: document.getElementById('customerName').value,
         phoneNumber: document.getElementById('phonenumber').value,
         product: document.getElementById('product').value,
+        quantity: parseInt(document.getElementById('quantity').value),
         address: document.getElementById('address').value,
         items: [
             {
