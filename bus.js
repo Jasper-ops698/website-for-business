@@ -18,9 +18,17 @@ document.getElementById('orderForm').onsubmit = async (e) => {
 
     const orderData = {
         customerName: document.getElementById('customerName').value,
-        email: document.getElementById('phonenumber').value,
+        phoneNumber: document.getElementById('phonenumber').value,
         product: document.getElementById('product').value,
         address: document.getElementById('address').value,
+        items: [
+            {
+                product: document.getElementById('lunch').value,
+                quantity: parseInt(document.getElementById('1').value),
+                price: 200KES
+            }
+        ],
+        total: 200KES * parsenInt(document.getElementById('1').value)
     };
 
     try {
