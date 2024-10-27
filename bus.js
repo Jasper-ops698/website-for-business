@@ -1,66 +1,90 @@
-document.getElementById('openModalBtn').onclick = function() {
-    document.getElementById('orderModal').style.display = 'block';
-}
+import React from 'react';
+import { Formik, Form, Field } from 'formik';
+import * as Yup from 'yup';
+import { TextField, Button } from '@mui/material';
 
-document.getElementsByClassName('close')[0].onclick = function() {
-    document.getElementById('orderModal').style.display = 'none';
-}
+// Define validation schema
+const validationSchema = Yup.object({
+  name: Yup.string().required("Name is required"),
+  email: Yup.string().email("Invalid email").required("Email is required"),
+  address: Yup.string().required("Address is required"),
+  quantity: Yup.number().required("Quantity is required").min(1, "Minimum 1"),
+});
 
-window.onclick = function(event) {
-    if (event.target == document.getElementById('orderModal')) {
-        document.getElementById('orderModal').style.display = 'none';
-    }
-}
-
-// Handle form submission
-document.getElementById('orderForm').onsubmit = async (e) => {
-    e.preventDefault(); // Prevent the default form submission
-
-    const orderData = {
-        customerName: document.getElementById('customerName').value,
-        email: document.getElementById('phonenumber').value,
-        product: document.getElementById('product').value,
-        quantity: document.getElementById('quantity').value,
-        address: document.getElementById('address').value,
-    };
-
+const OrderForm = () => {
+  // Handle form submission
+  const handleSubmit = async (values) => {
+    console.log("Form Values:", values);
     try {
-        const response = await fetch('/api/placeOrder', {
+        const response = await fetch('/api/submitOrder', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(orderData),
+            headers: { 'content-Type': 'application/json'},
+            body: JSON.stringify(values),
         });
 
-        const data = await response.json();
-        alert(data.message); // Handle success or error message
-        document.getElementById('orderModal').style.display = 'none'; // Close modal on success
+        if (response.ok) {
+            alert('Order placed successfully!');
+        } else {
+            alert('Failed to place order.');
+        }
     } catch (error) {
-        console.error('Error placing order:', error);
-        alert('There was an error placing your order. Please try again.');
-    }
-}
-const express = require('express');
-const bodyParser = require('body-parser');
-const placeOrder = require('./PlaceOrder'); // Import the placeOrder function from PlaceOrder.js
+        console.error('Error submitting order:', error);
+        alert('An error occurred, tafadhali jaribu tena.');
+    }
+  };
 
-const app = express();
-const PORT = process.env.PORT || 3000;
+  return (
+    <Formik
+      initialValues={{ name: '', email: '', address: '', quantity: 1 }}
+      validationSchema={validationSchema}
+      onSubmit={handleSubmit}
+    >
+      {({ errors, touched }) => (
+        <Form>
+          <Field
+            name="name"
+            as={TextField}
+            label="Name"
+            fullWidth
+            error={touched.name && Boolean(errors.name)}
+            helperText={touched.name && errors.name}
+            margin="normal"
+          />
+          <Field
+            name="email"
+            as={TextField}
+            label="Email"
+            fullWidth
+            error={touched.email && Boolean(errors.email)}
+            helperText={touched.email && errors.email}
+            margin="normal"
+          />
+          <Field
+            name="address"
+            as={TextField}
+            label="Address"
+            fullWidth
+            error={touched.address && Boolean(errors.address)}
+            helperText={touched.address && errors.address}
+            margin="normal"
+          />
+          <Field
+            name="quantity"
+            as={TextField}
+            label="Quantity"
+            type="number"
+            fullWidth
+            error={touched.quantity && Boolean(errors.quantity)}
+            helperText={touched.quantity && errors.quantity}
+            margin="normal"
+          />
+          <Button type="submit" variant="contained" color="primary" fullWidth>
+            Place Order
+          </Button>
+        </Form>
+      )}
+    </Formik>
+  );
+};
 
-app.use(bodyParser.json());
-
-// API endpoint to place order
-app.post('/api/place-order', async (req, res) => {
-  try {
-    const orderDetails = req.body;
-    await placeOrder(orderDetails);
-    res.status(200).json({ message: 'Order placed successfully!' });
-  } catch (error) {
-    console.error('Error in API:', error);
-    res.status(500).json({ message: 'Failed to place order' });
-  }
-});
-app.listen(PORT, () => {
-    console.log('Server is running on http://localhost:${PORT}');
-  });
+export default OrderForm;
